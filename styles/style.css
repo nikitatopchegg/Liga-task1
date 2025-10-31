@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Базовые стили */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-width: 320px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Остальные стили */
+.company {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-y: hidden;
+}
+
+.company__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 36%;
+  max-width: 36%;
+}
+
+.company__container {
+  padding-inline: clamp(16px, 4%, 64px);
+  font-size: clamp(16px, 4vw, 84px);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.company__container--white {
+  min-height: 66vh;
+  padding-top: 125px;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.company__container--grey {
+  height: 100%;
+  background-color: #828282;
+  padding-top: 95px;
+  padding-bottom: 48px;
+}
+
+.company__descr {
+  font-weight: 300;
+  font-size: 0.3em;
+  color: #f2f2f2;
+}
+
+.company__title {
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+.social-list {
+  display: flex;
+  gap: 24px;
+}
+
+.social-list__icon {
+  display: block;
+  width: clamp(16px, 2.3vw, 40px);
+  height: clamp(16px, 2.3vw, 40px);
+}
+
+.company__gallery {
+  display: grid;
+  width: 100%;
+  max-width: 64%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 40vh 26vh 34vh;
+  grid-template-areas:
+    "girl-green girl-green girl-blue girl-white"
+    "girl-green girl-green door square-red"
+    "coffee square-brown door boy";
+}
+
+.company__photo1 {
+  grid-area: girl-green;
+}
+
+.company__photo2 {
+  grid-area: girl-blue;
+}
+
+.company__photo3 {
+  grid-area: girl-white;
+}
+
+.company__photo4 {
+  grid-area: coffee;
+}
+
+.company__photo5 {
+  grid-area: square-brown;
+}
+
+.company__photo6 {
+  grid-area: door;
+}
+
+.company__photo7 {
+  grid-area: square-red;
+}
+
+.company__photo8 {
+  grid-area: boy;
+}
+
+.company__photo--brown {
+  background-color: #a6806b;
+}
+
+.company__photo--red {
+  background-color: #a61c1c;
+}
+
+.company__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
