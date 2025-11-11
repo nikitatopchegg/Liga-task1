@@ -89,6 +89,7 @@ p {
   font-weight: 300;
   font-size: 0.3em;
   color: #f2f2f2;
+  text-align: center;
 }
 
 .company__title {
@@ -96,6 +97,7 @@ p {
   font-size: 1em;
   line-height: 110%;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .social-list {
@@ -121,48 +123,158 @@ p {
     "coffee square-brown door boy";
 }
 
-.company__photo1 {
+.company__gallery-item--portrait {
   grid-area: girl-green;
 }
 
-.company__photo2 {
+.company__gallery-item--smile {
   grid-area: girl-blue;
 }
 
-.company__photo3 {
+.company__gallery-item--calm {
   grid-area: girl-white;
 }
 
-.company__photo4 {
+.company__gallery-item--coffee {
   grid-area: coffee;
 }
 
-.company__photo5 {
+.company__gallery-item--brown {
   grid-area: square-brown;
-}
-
-.company__photo6 {
-  grid-area: door;
-}
-
-.company__photo7 {
-  grid-area: square-red;
-}
-
-.company__photo8 {
-  grid-area: boy;
-}
-
-.company__photo--brown {
   background-color: #a6806b;
 }
 
-.company__photo--red {
+.company__gallery-item--door {
+  grid-area: door;
+}
+
+.company__gallery-item--red {
+  grid-area: square-red;
   background-color: #a61c1c;
+}
+
+.company__gallery-item--man {
+  grid-area: boy;
 }
 
 .company__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Медиа запросы */
+@media (max-width: 1200px) {
+  .company__title {
+    text-align: center;
+  }
+
+  .company__descr {
+    font-size: 0.5em;
+  }
+
+  .company__gallery {
+    grid-template-columns: 1fr repeat(2, 15vw) 1fr;
+    grid-template-rows: 42vh 28vh 11vh 32vh;
+    grid-template-areas:
+      "girl-green girl-green girl-blue girl-blue"
+      "coffee girl-white girl-white square-brown"
+      "square-red square-red square-red square-red"
+      "door door boy boy";
+  }
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  .company__descr {
+    font-size: 0.35em;
+  }
+
+  .company__container--white {
+    padding-top: 62px;
+  }
+
+  .company__container--grey {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .company__descr {
+    font-size: 0.7em;
+  }
+
+  .company__gallery {
+    grid-template-columns: repeat(2, 32vw);
+    grid-template-rows: 32vh 28vh 11vh 32vh;
+    grid-template-areas:
+      "girl-green girl-blue"
+      "coffee girl-white"
+      "square-red square-brown"
+      "door boy";
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .company__descr {
+    font-size: 0.4em;
+  }
+
+  .company__container--white {
+    padding-top: 40px;
+  }
+
+  .company__container--grey {
+    padding-top: 40px;
+    padding-bottom: unset;
+  }
+
+  .company__gallery {
+    grid-template-columns: repeat(2, 32vw);
+    grid-template-rows: 32vh 28vh 11vh 32vh;
+    grid-template-areas:
+      "girl-green girl-blue"
+      "coffee girl-white"
+      "square-red square-brown"
+      "door boy";
+  }
+}
+
+@media (max-width: 480px) {
+  .company {
+    flex-direction: column;
+  }
+
+  .company__info {
+    max-width: 100%;
+  }
+
+  .company__container {
+    font-size: 26px;
+    padding-inline: 24px;
+  }
+
+  .company__descr {
+    font-size: 0.6em;
+  }
+
+  .company__container--white {
+    min-height: unset;
+    padding-top: 40px;
+    gap: 20px;
+  }
+
+  .company__container--grey {
+    max-height: 160px;
+    padding-top: 42px;
+  }
+
+  .company__gallery {
+    grid-template-columns: repeat(2, 50vw);
+    grid-template-rows: repeat(2, 24vh) 5vh 21vh;
+    grid-template-areas:
+      "girl-green girl-blue"
+      "coffee girl-white"
+      "square-red square-brown"
+      "door boy";
+  }
 }
